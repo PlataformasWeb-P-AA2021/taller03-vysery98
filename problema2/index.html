@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" />
+    <title>Problema 2</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</head>
+<body>
+    <div>
+        <p>
+            Nombre:<br><br>
+            <input id="nombre" type="text">
+        </p>
+        <p>
+            Apellido:<br><br>
+            <input id="apellido" type="text">
+        </p>
+        <p>
+            Fecha de Nacimiento:<br><br>
+            <input type="text" id="fecha">
+        </p>
+    </div>
+    <button type="submit">Generar Mensaje</button>
+</body>
+<script>
+    $( function() {
+      $( "#datepicker" ).datepicker();
+    } );
+
+    $(document).ready(function() {
+      $( "button" ).click(function() {
+        var nombre = $('#nombre').val();
+        var apellido = $('#apellido').val();
+        var fecha = $('#fecha').val();
+        console.log(nombre);
+        console.log(apellido);
+        console.log(fecha);
+      });
+    });
+  </script>
+</html>

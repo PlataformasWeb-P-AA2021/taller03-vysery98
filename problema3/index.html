@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" />
+    <title>Problema 3</title>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+</head>
+<body>
+    <h3>Comprehensive country code information</h3>
+    <p id="infoRecopilada">
+    </p>
+    <button type="submit" id="getInfo">Obtener información</button>
+    <button type="submit" id="cleanInfo">Limpiar información</button>
+    <script>
+        $(document).ready(function() {
+            var url = "https://pkgstore.datahub.io/core/country-codes/country-codes_json/data/616b1fb83cbfd4eb6d9e7d52924bb00a/country-codes_json.json";
+            $( "#getInfo" ).click(function() {
+                $.ajax({
+                dataType: 'json',
+                url: url 
+                }).then(function(data) {
+                    for(var i = 0; i < data.length; i++){
+                        $('#infoRecopilada').append("<p>Country's customary English short name (CLDR): " + (data[i])['CLDR display name'] + "<br>" + 
+                            "Capital city from Geonames: " + (data[i])['Capital'] + "<br>Codes from the U.S. standard FIPS PUB 10-4: " + 
+                            (data[i])['FIPS'] + "<br>Codes assigned by the Fédération Internationale de Football Association: " + (data[i])['FIFA'] +
+                            "<br>Continent from Geonames: " + (data[i])['Continent'] + "<br>Languages from Geonames: " + (data[i])['Languages'] +
+                            "<br>Geoname ID: " + (data[i])['Geoname ID'] + "<br>Distinguishing signs of vehicles in international traffic: " + 
+                            (data[i])['DS'] + "<br></p>");
+                    }
+                })      
+            }); 
+
+            $( "#cleanInfo" ).click(function(){
+                $("#infoRecopilada").empty();
+            })
+        });
+    </script> 
+</body>
+</html>

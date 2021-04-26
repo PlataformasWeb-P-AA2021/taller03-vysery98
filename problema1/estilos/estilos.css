@@ -1,0 +1,22 @@
+.uno {
+    background-color: #9999FF;
+    border: 2px solid #42426F;
+    padding: 0.05% 1.25%;
+}
+
+.mensaje {
+    background-color: #F3F3F3;
+    border: 2px solid #FFFF00;
+    font-weight: bold;
+    padding: 1.2% 1.2%;
+}
+
+.dos {
+    background-color: #CE8845;
+}
+
+.comentario {
+    color: white;
+    margin: 0.75em;
+    border-bottom: 2px solid #008000;
+}
